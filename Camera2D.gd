@@ -33,15 +33,6 @@ func _physics_process(delta):
 	shake()
 
 
-func shake():
-	var amount := pow(shake_amount, SHAKE_EXPONENT)
-
-	noise_y += 1.0
-	rotation = max_rotation * amount * noise.get_noise_2d(noise.seed, noise_y)
-	offset = Vector2(
-		max_offset.x * amount * noise.get_noise_2d(noise.seed * 2, noise_y),
-		max_offset.y * amount * noise.get_noise_2d(noise.seed * 3, noise_y)
-	)
 
 
 func set_shake_amount(value):
@@ -52,3 +43,4 @@ func set_shake_amount(value):
 func _on_Events_shake_camera(amount) -> void:
 	self.shake_amount += amount
 
+This is my test to know if it works
